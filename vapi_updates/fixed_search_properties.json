@@ -1,0 +1,41 @@
+{
+  "function": {
+    "name": "searchProperties",
+    "description": "Search for properties based on location, price range, bedrooms, and property type",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "City or neighborhood to search properties in (e.g., Austin, San Francisco)"
+        },
+        "bedrooms": {
+          "type": "integer",
+          "description": "Minimum number of bedrooms required"
+        },
+        "priceRange": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number",
+              "description": "Minimum price in USD"
+            },
+            "max": {
+              "type": "number",
+              "description": "Maximum price in USD"
+            }
+          },
+          "description": "Price range for the property"
+        },
+        "propertyType": {
+          "type": "string",
+          "description": "Type of property (apartment, house, condo, etc.)"
+        }
+      }
+    }
+  },
+  "server": {
+    "url": "${SERVER_URL}/api/vapi/property/search",
+    "secret": "${VAPI_SECRET_TOKEN}"
+  }
+} 

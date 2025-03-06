@@ -1,0 +1,36 @@
+{
+  "function": {
+    "name": "scheduleViewing",
+    "description": "Schedule a property viewing appointment",
+    "parameters": {
+      "type": "object",
+      "required": ["propertyId", "datetime", "clientName", "clientPhone"],
+      "properties": {
+        "propertyId": {
+          "type": "string",
+          "description": "ID of the property to view (e.g., prop3)"
+        },
+        "datetime": {
+          "type": "string", 
+          "description": "Date and time for viewing in ISO format (YYYY-MM-DDTHH:MM:SS)"
+        },
+        "clientName": {
+          "type": "string",
+          "description": "Full name of the client scheduling the viewing"
+        },
+        "clientPhone": {
+          "type": "string",
+          "description": "Phone number of the client"
+        },
+        "clientEmail": {
+          "type": "string",
+          "description": "Email address of the client (optional)"
+        }
+      }
+    }
+  },
+  "server": {
+    "url": "${SERVER_URL}/api/vapi/property/schedule-viewing",
+    "secret": "${VAPI_SECRET_TOKEN}"
+  }
+} 

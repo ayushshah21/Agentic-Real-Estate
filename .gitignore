@@ -1,0 +1,17 @@
+*.env
+node_modules/
+dist/
+.DS_Store
+*.log
+.env*
+.vscode/
+coverage/
+.idea/
+*.pem
+*.key
+*.cert
+# Ignore any files that might contain secrets
+*secret*
+*private*
+# Ignore build artifacts
+build/

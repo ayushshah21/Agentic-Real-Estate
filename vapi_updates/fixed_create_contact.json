@@ -1,0 +1,36 @@
+{
+  "function": {
+    "name": "createContact",
+    "description": "Create or update a contact in HubSpot with client information",
+    "parameters": {
+      "type": "object",
+      "required": ["firstName", "lastName", "email", "phone"],
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "Contact's first name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Contact's last name"
+        },
+        "email": {
+          "type": "string",
+          "description": "Contact's email address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Contact's phone number"
+        },
+        "propertyInterest": {
+          "type": "string",
+          "description": "Property the contact is interested in (address or ID)"
+        }
+      }
+    }
+  },
+  "server": {
+    "url": "${SERVER_URL}/api/vapi/hubspot/sync-contact",
+    "secret": "${VAPI_SECRET_TOKEN}"
+  }
+} 
